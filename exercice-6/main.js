@@ -5,19 +5,17 @@ let computerStatus = 'vert';
 
 if (niveauDeCarburant >= 20000) {
 	console.log('Niveau de carburant vérifié.');
-	lancementOk = true;
+	if (statutEquipage  && computerStatus === 'vert'){
+		console.log('Equipage et ordinateur approuvés.');
+		lancementOk = true;
+	} else {
+		console.log("AVERTISSEMENT : L'équipage ou l'ordinateur n'est pas prêt !");
+	}
 } else {
 	console.log('AVERTISSEMENT : Carburant insuffisant !');
-	lancementOk = false;
 }
 
-if (statutEquipage  && computerStatus === 'vert'){
-	console.log('Equipage et ordinateur approuvés.');
-	lancementOk = true;
-} else {
-	console.log("AVERTISSEMENT : L'équipage ou l'ordinateur n'est pas prêt !");
-	lancementOk = false;
-}
+
 
 if (lancementOk) {
 	console.log('10, 9, 8, 7, 6, 5, 4, 3, 2, 1...');
